@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Arduino-abajur-bluetooth by 2bec</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Arduino-abajur-bluetooth</h1>
+        <h2>Como fiz um abajur bluetooth utilizando Arduino.</h2>
+        <a href="https://github.com/2bec/arduino-abajur-bluetooth" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="apresentação-arduino-abajur-bluetooth" class="anchor" href="#apresenta%C3%A7%C3%A3o-arduino-abajur-bluetooth" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Apresentação arduino-abajur-bluetooth</h1>
+
+<p>Não vou me aprofundar no tema de automação, arduíno ou comunicação bluetooth. Simplesmente mostrarei que com alguns módulos e algumas linhas de código podemos controlar um abajur através do bluetooth.</p>
+
+<p>Utilizarei Arduíno R3 e um módulo bluetooth HC-06 adquiridos pela internet, todas as referências a modelos e data sheets estarão documentados.</p>
+
+<p>Você pode observar que de maneira simples podemos nos comunicar com outros aparelhos em nosso dia-a-dia, podemos programá-los para se adaptar a nossa rotina e até a realizarem tarefas para nós no momento em que desejarmos.</p>
+
+<h2>
+<a id="requisitos" class="anchor" href="#requisitos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requisitos</h2>
+
+<ul>
+<li>Placa Arduíno Uno R3 <a href="https://www.arduino.cc/en/Main/ArduinoBoardUno">site oficial</a>, <a href="https://www.arduino.cc/en/uploads/Main/Arduino_Uno_Rev3-schematic.pdf">schematic</a>, <a href="http://download.arduino.org/products/UNO/Arduino-UNO-Rev3e-SCH.pdf">schematic download</a>, <a href="http://www.mouser.com/pdfdocs/Gravitech_ATMEGA328_datasheet.pdf">ATMEGA 328 datasheet</a>
+</li>
+<li>Módulo HC-06 FC-114 <a href="http://www.wavesen.com/mysys/db_picture/news3/201652094211101.pdf">datasheet</a>, <a href="http://www.bolutek.cn/Products_info.asp?id=278">BLK-MD-BC04-B</a>
+</li>
+<li>Módulo rele de 1 canal <a href="http://eletronicos.mercadolivre.com.br/pecas-componentes-eletricos/modulo-rele-1-canal-5v">ver no mercado livre</a>
+</li>
+<li>Bateria 5v e um conector para arduino <a href="http://eletronicos.mercadolivre.com.br/pecas-componentes-eletricos/conector-bateria-5v-arduino">ver no mercado livre</a>
+</li>
+</ul>
+
+<h2>
+<a id="introdução" class="anchor" href="#introdu%C3%A7%C3%A3o" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introdução</h2>
+
+<p>O funcionamento será simples, o celular enviará um sinal e o Arduíno executará o procedimento para o sinal recebido, resultando na luz acesa ou apagada.</p>
+
+<p>Você precisa parear e se conectar por bluetooth ao hardware, para enfim enviar um sinal. Por exemplo, ao enviar o sinal de <code>acender luz</code> o Arduíno aciona o relé para acender a lâmpada. E ao enviar um sinal de <code>apagar luz</code> o Arduíno aciona o relé para desligar a lâmpada.</p>
+
+<h2>
+<a id="desenvolvimento" class="anchor" href="#desenvolvimento" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Desenvolvimento</h2>
+
+<p>Vou utilizar o Arduíno Uno R3 por questões práticas.</p>
+
+<h3>
+<a id="passos" class="anchor" href="#passos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Passos</h3>
+
+<ul>
+<li><p>Começamos fazendo a ligação do bluetooth ao Arduíno;
+<img src="https://github.com/2bec/arduino-abajur-bluetooth/r3-bluetooth.jpg" alt="Ligação arduíno + módulo bluetooth"></p></li>
+<li><p>Depois ligamos o relé ao Arduino;
+<img src="https://github.com/2bec/arduino-abajur-bluetooth/r3-bluetooth-rele.jpg" alt="Ligação arduíno + módulo bluetooth + relé"></p></li>
+<li>Criamos um código para testar;
+<img src="https://github.com/2bec/arduino-abajur-bluetooth/teste-code-r3.mp4" alt="Vídeo do teste">
+</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/2bec/arduino-abajur-bluetooth/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/2bec/arduino-abajur-bluetooth/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/2bec/arduino-abajur-bluetooth"></a> is maintained by <a href="https://github.com/2bec">2bec</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
